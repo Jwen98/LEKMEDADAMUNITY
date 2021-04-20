@@ -7,12 +7,14 @@ public class GridGenerator : MonoBehaviour
 {
     public int rows = 5;
     public int cols = 5;
+    public float timer = 0;
     public float tileSize = 1;
+    public bool spawned = false;
     public GameObject[] tiles;
     // Start is called before the first frame update
     void Start()
     {
-        GenerateGrid();
+
     }
 
     private void GenerateGrid()
@@ -37,6 +39,11 @@ public class GridGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if(timer > 1 && !spawned)
+        {
+            spawned = true;
+            GenerateGrid();
+        }
     }
 }

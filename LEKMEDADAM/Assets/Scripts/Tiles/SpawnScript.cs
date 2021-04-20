@@ -9,7 +9,7 @@ public class SpawnScript : MonoBehaviour
     void Start()
     {
         GameObject spawnGrid = Instantiate(grid);
-        spawnGrid.transform.position = gameObject.transform.position;
+        spawnGrid.transform.position += gameObject.transform.position;
     }
 
     // Update is called once per frame
